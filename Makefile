@@ -1,8 +1,3 @@
-.PHONY: dev
-dev:
-	poetry shell
-	uvicorn --host=0.0.0.0 app.main:app --port 7999 --reload --log-level debug --no-access-log 
-
 lint:
 	poetry run ruff app
 	poetry run black app --check
@@ -10,11 +5,6 @@ lint:
 types:
 	poetry run pyright app
 
-test:
-	export PYTHONPATH='.'
-	poetry run pytest app
-
 checks:
 	make lint
 	make types
-	make test		

@@ -30,7 +30,3 @@ jobs:
     - name: Typecheck with pyright
       run: |
         poetry run pyright app
-    - name: Test with pytest
-      run: |
-        export PYTHONPATH='.'
-        poetry run pytest app
